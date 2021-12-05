@@ -33,7 +33,7 @@ export default {
     };
   },
   mounted() {
-    let input = document.getElementById('login-input');
+    const input = document.getElementById('login-input');
     input.addEventListener('keyup', function (event) {
       if (event.keyCode === 13) {
         event.preventDefault();
@@ -45,13 +45,13 @@ export default {
     login() {
       if (this.input.answer !== '') {
         // if (this.input.answer == this.$parent.answer) {
-        if (this.input.answer === 'Baum' || this.input.answer == 'baum') {
+        if (this.input.answer === 'Baum' || this.input.answer === 'baum') {
           this.$emit('authenticated', true);
           document.body.scrollTop = 0; // For Safari
           document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
-          this.$router.replace({ name: "Home" });
+          this.$router.replace({ name: 'Home' });
         } else {
-          document.getElementById("login_failed").innerHTML = "Die Antwort war wohl falsch. Versuch's nochmal!<br /><br />";
+          document.getElementById('login_failed').innerHTML = "Die Antwort war wohl falsch. Versuch's nochmal!<br /><br />";
         }
       }
     },
